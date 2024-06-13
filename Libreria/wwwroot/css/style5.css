@@ -1,0 +1,103 @@
+﻿h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #a0d9c4;
+}
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: #2b2828;
+}
+
+table, td, td {
+    border: 1px solid white;
+}
+
+.search-button, button {
+    height: 40px;
+}
+
+.search-input {
+    height: 30px;
+}
+
+#principale, ul {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: rgba(51, 51, 51, 0.9); /* Colore di sfondo semitrasparente per la navbar */
+    border-radius: 10px; /* Smussa i bordi della navbar */
+    margin: 20px; /* Aggiunge margini intorno alla navbar */
+    overflow: hidden;
+    padding: 10px; /* Aggiunge padding per contenere gli elementi */
+    width: 100%;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nav-item {
+    margin: 0 10px; /* Margine tra gli elementi del menu */
+}
+
+.nav-link {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 20px; /* Padding all'interno del link */
+    text-decoration: none;
+    border-radius: 5px; /* Smussa i bordi dei link */
+}
+
+    .nav-link:hover, .back-button:hover, .search-button:hover {
+        background-color: #575757;
+    }
+
+.content {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Sfondo semitrasparente per migliorare la leggibilità */
+    border-radius: 10px;
+    margin: 20px;
+    position: relative; /* Aggiunto per posizionare il bottone relativo al contenitore */
+}
+
+.search-button, #invio, button {
+    background-color: #575757; /* Colore di sfondo del bottone */
+    color: white; /* Colore del testo del bottone */
+    padding: 7px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-container {
+    margin-top: 20px;
+}
+
+.search-input {
+    padding: 10px;
+    border: 2px solid #575757;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+    width: 300px; /* Puoi regolare la larghezza a seconda delle tue esigenze */
+}
+
+.back-button {
+    /* Posizionamento assoluto */
+    top: 10px; /* Distanza dal bordo superiore */
+    left: 10px; /* Distanza dal bordo sinistro */
+}
+
+.link-styled {
+    text-decoration: none; /* Rimuove il sottolineato dei link */
+    color: white; /* Imposta il colore del testo */
+    cursor: pointer; /* Cambia il cursore quando si passa sopra al link */
+}
