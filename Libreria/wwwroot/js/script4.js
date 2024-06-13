@@ -1,7 +1,7 @@
 ﻿document.addEventListener('DOMContentLoaded', function () {
     let carrello = JSON.parse(localStorage.getItem('carrello')) || [];
     let carrelloBody = document.getElementById('carrello2');
-
+    
     function aggiornaCarrello(isbn) {
         carrello = carrello.filter(item => item !== isbn);
         localStorage.setItem('carrello', JSON.stringify(carrello));
@@ -60,7 +60,7 @@
     document.getElementById('clear').addEventListener('click', () => {
         let t = document.getElementById('carrello2');
 
-        t.innerHTML = '';
+        t.innerHTML = 'Nessun Libro Presente';
         svuotaCarrello();
     })
 });
