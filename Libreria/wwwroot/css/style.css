@@ -2,16 +2,15 @@
     font-family: Arial, sans-serif;
     background-image: image-set("/images/libreria.jpg");
 }
-#terzo{
-    background-color: rgba(51, 51, 51, 0.9)
-}
+
 #secondario {
-    background-color: black;
     font-family: Arial, sans-serif;
+    background-color: rgba(51, 51, 51, 0.9);
 }
-#g{
-    height:310px;
-    width:210px;
+
+#g {
+    height: 310px;
+    width: 210px;
     margin: 2.8px;
 }
 
@@ -19,69 +18,61 @@
     color: #AFCFCC;
     font-family: Georgia, serif;
 }
-table{
+
+table {
     border-collapse: collapse;
     width: 100%;
     color: white;
-
 }
-table, td, td{
+
+table, td, td {
     border: 1px solid white;
 }
-.search-button{
-    height:40px;
-}
-.search-input{
-    height: 40px;
-}
+
 #principale, ul {
     margin: 0;
     padding: 0;
 }
 
+/* sfondo libri */
+.content {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    margin: 20px;
+    position: relative;
+}
+
+/* navbar */
 .navbar {
-    background-color: rgba(51, 51, 51, 0.9); /* Colore di sfondo semitrasparente per la navbar */
-    border-radius: 10px; /* Smussa i bordi della navbar */
-    margin: 20px; /* Aggiunge margini intorno alla navbar */
+    background-color: rgba(51, 51, 51, 0.9);
+    border-radius: 10px;
+    margin: 20px;
     overflow: hidden;
-    padding: 10px; /* Aggiunge padding per contenere gli elementi */
-    width:100%;
-}
-
-.nav-list {
-    list-style: none;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.nav-item {
-    margin: 0 10px; /* Margine tra gli elementi del menu */
+    padding: 10px;
+    width: 100%;
 }
 
 .nav-link {
     display: block;
-    color: white;
+    color: white !important;
     text-align: center;
-    padding: 10px 20px; /* Padding all'interno del link */
+    padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px; /* Smussa i bordi dei link */
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 5px;
 }
 
-    .nav-link:hover, .back-button:hover, .search-button:hover {
+    .nav-link:hover {
         background-color: #575757;
+        color: white;
     }
 
-.content {
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Sfondo semitrasparente per migliorare la leggibilità */
-    border-radius: 10px;
-    margin: 20px;
-    position: relative; /* Aggiunto per posizionare il bottone relativo al contenitore */
-}
-
+/* input e bottone */
 .search-button {
-    background-color: #575757; /* Colore di sfondo del bottone */
-    color: white; /* Colore del testo del bottone */
+    background-color: #575757;
+    color: white;
     padding: 7px 20px;
     border: none;
     border-radius: 5px;
@@ -99,17 +90,17 @@ table, td, td{
     border-radius: 5px;
     font-size: 16px;
     margin-right: 10px;
-    width: 300px; /* Puoi regolare la larghezza a seconda delle tue esigenze */
+    width: 400px;
 }
 
-.back-button {
-    /* Posizionamento assoluto */
-    top: 10px; /* Distanza dal bordo superiore */
-    left: 10px; /* Distanza dal bordo sinistro */
+.search-button {
+    height: 40px;
 }
 
-.link-styled {
-    text-decoration: none; /* Rimuove il sottolineato dei link */
-    color: white; /* Imposta il colore del testo */
-    cursor: pointer; /* Cambia il cursore quando si passa sopra al link */
+.search-input {
+    height: 40px;
+}
+
+#search-button:hover {
+    background-color: rgba(51, 51, 51, 0.9);
 }

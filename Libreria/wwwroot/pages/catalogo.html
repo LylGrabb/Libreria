@@ -4,40 +4,54 @@
     <meta charset="utf-8" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <link href="../css/style.css" rel="stylesheet" />
+
     <script defer src="../js/script.js"></script>
-    <link rel="chrome-webstore-item icon" type="png" href="../images/book.jpg" />
+    <link rel="chrome-webstore-item icon" type="png" href="../images/catalogo.png" />
     <title>Catalogo</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
 </head>
-<body style="background-color: rgba(51, 51, 51, 0.9)" id="secondario">
+<body id="secondario">
     <div class="container">
         <div class="h1">
-            <h1 style="font-size:50px; padding-left:35px">Catalogo</h1>
+            <h1 style="font-size:50px; padding-left:20px">Catalogo</h1>
         </div>
-        <div class="container text-center">
-            <div id="navbar">
-                <nav class="navbar">
-                    <ul class="nav-list">
-                        <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="/pages/scaffali.html" class="nav-link">Scaffali</a></li>
-                        <li class="nav-item"><a href="/pages/catalogo.html" class="nav-link">Catalogo</a></li>
-
+        <div id="navbar">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/index.html"><img src="../images/home.png" alt="Home" /></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/pages/scaffali.html">Scaffali</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/pages/catalogo.html">Catalogo</a>
+                            </li>
+                        </ul>
                         <div class="search-container" style="padding:0px; margin:0px; display:block">
-                            <input type="text" id="search-input" class="search-input" placeholder="Search...">
+                            <input type="text" id="search-input" class="search-input" placeholder="Inserisci titolo/autore/isbn">
                             <button id="search-button" class="search-button">Search</button>
                         </div>
-                        <li class="nav-item"><a href="/pages/aggiungi.html" class="nav-link">Aggiungi</a></li>
-                        <li class="nav-item"><a href="/pages/elimina.html" class="nav-link">Rimuovi</a></li>
-                    </ul>
-                </nav>
-            </div>
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/pages/aggiungi.html">Aggiungi</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/pages/elimina.html">Rimuovi</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/pages/carrello.html">Carrello</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </div>
-        <div id="search-container" style="padding-left:35px">
-
-
-        </div>
+        <div id="search-container" style="padding-left:35px"></div>
     </div>
     <div class="container" style="padding-left:45px">
         <table id="libri">
@@ -47,6 +61,7 @@
                     <td>GENERE(Romanzo): </td>
                     <td>AUTORE:</td>
                     <td>ISBN:</td>
+                    <td>PREZZO:</td>
                 </tr>
             </thead>
             <tbody>

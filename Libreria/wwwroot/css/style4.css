@@ -1,103 +1,158 @@
-﻿
-h1, h2 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #a0d9c4;
+﻿/* Body */
+#quarto {
+    font-family: Arial, sans-serif;
+    background-color: rgba(51, 51, 51, 0.9);
 }
-h3{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+/* Titoli */
+h1 {
+    margin: 0 auto;
+    color: #AFCFCC;
+    font-family: Georgia, serif;
 }
-body{
-    background-color: #2b2828;
+/* Contenitore input */
+.content {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    margin: 20px;
+    position: relative;
 }
 
 table, td, td {
     border: 1px solid white;
 }
-
-.search-button, button{
-    height: 40px;
-}
-
-.search-input {
-    height: 40px;
-}
-
-#principale, ul {
-    margin: 0;
-    padding: 0;
-}
-
+/* navbar */
 .navbar {
-    background-color: rgba(51, 51, 51, 0.9); /* Colore di sfondo semitrasparente per la navbar */
-    border-radius: 10px; /* Smussa i bordi della navbar */
-    margin: 20px; /* Aggiunge margini intorno alla navbar */
+    background-color: rgba(51, 51, 51, 0.9);
+    border-radius: 10px;
+    margin: 20px;
     overflow: hidden;
-    padding: 10px; /* Aggiunge padding per contenere gli elementi */
+    padding: 10px;
     width: 100%;
-}
-
-.nav-list {
-    list-style: none;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.nav-item {
-    margin: 0 10px; /* Margine tra gli elementi del menu */
 }
 
 .nav-link {
     display: block;
-    color: white;
+    color: white !important;
     text-align: center;
-    padding: 10px 20px; /* Padding all'interno del link */
+    padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px; /* Smussa i bordi dei link */
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 5px;
 }
 
-    .nav-link:hover, .back-button:hover, .search-button:hover {
+    .nav-link:hover {
         background-color: #575757;
+        color: white;
     }
 
-.content {
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Sfondo semitrasparente per migliorare la leggibilità */
-    border-radius: 10px;
-    margin: 20px;
-    position: relative; /* Aggiunto per posizionare il bottone relativo al contenitore */
+/* spazi di input */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
 }
 
-.search-button,#invio ,button{
-    background-color: #575757; /* Colore di sfondo del bottone */
-    color: white; /* Colore del testo del bottone */
+* {
+    box-sizing: border-box;
+}
+
+#spazioInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inp {
+    position: relative;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 480px;
+    border-radius: 3px;
+    overflow: hidden;
+    color: white;
+}
+
+    .inp .label {
+        position: absolute;
+        top: 20px;
+        left: 12px;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.5);
+        font-weight: 500;
+        transform-origin: 0 0;
+        transform: translate3d(0, 0, 0);
+        transition: all 0.2s ease;
+        pointer-events: none;
+    }
+
+    .inp .focus-bg {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.5); /* Linea sotto l'input diventa bianca */
+        z-index: 1;
+        transform-origin: left;
+        transform: scaleX(0);
+        transition: transform 0.2s ease;
+    }
+
+    .inp input {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        border: 0;
+        font-family: inherit;
+        padding: 16px 12px 0 12px;
+        height: 56px;
+        font-size: 16px;
+        font-weight: 400;
+        background: rgba(0, 0, 0, 0.02);
+        box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+        color: #000;
+        transition: all 0.15s ease;
+    }
+
+        .inp input:hover {
+            background: rgba(0, 0, 0, 0.04);
+            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .inp input:not(:placeholder-shown) + .label {
+            color: rgba(0, 0, 0, 0.5);
+            transform: translate3d(0, -12px, 0) scale(0.75);
+        }
+
+        .inp input:focus {
+            background: rgba(0, 0, 0, 0.05);
+            outline: none;
+            box-shadow: inset 0 -2px 0 black;
+        }
+
+            .inp input:focus + .label {
+                color: black;
+                transform: translate3d(0, -12px, 0) scale(0.75);
+            }
+
+                .inp input:focus + .label + .focus-bg {
+                    transform: scaleX(1);
+                    transition: all 0.1s ease;
+                    background: black;
+                }
+
+#invio {
+    background-color: #575757;
+    color: white;
     padding: 7px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-}
-
-.search-container {
-    margin-top: 20px;
-}
-
-.search-input {
-    padding: 10px;
-    border: 2px solid #575757;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-right: 10px;
-    width: 300px; /* Puoi regolare la larghezza a seconda delle tue esigenze */
-}
-
-.back-button {
-    /* Posizionamento assoluto */
-    top: 10px; /* Distanza dal bordo superiore */
-    left: 10px; /* Distanza dal bordo sinistro */
-}
-
-.link-styled {
-    text-decoration: none; /* Rimuove il sottolineato dei link */
-    color: white; /* Imposta il colore del testo */
-    cursor: pointer; /* Cambia il cursore quando si passa sopra al link */
 }
