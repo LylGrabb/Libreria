@@ -76,7 +76,7 @@
                         window.location.href = link.href;
                     });
                 } else {
-                    console.log("Div già esistente");
+                    //console.log("Div già esistente");
                     // recupera div dalla classe
                     let slickCarouselDiv = div.querySelector('.slick-carousel');
 
