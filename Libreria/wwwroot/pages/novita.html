@@ -59,6 +59,8 @@
 
 
     <script>
+        const isbn = JSON.parse(localStorage.getItem('selectedBook'));
+
         document.addEventListener('DOMContentLoaded', function () {
             /*function getQueryParameter(name) {
                 const urlParams = new URLSearchParams(window.location.search);
@@ -67,7 +69,7 @@
 
             const isbn = getQueryParameter('isbn'); */
 
-            const isbn = JSON.parse(localStorage.getItem('selectedBook'));
+
             let id = "info";
             let div = document.createElement('div');
             div.id = id;
@@ -104,6 +106,9 @@
                 document.getElementById('book-details').innerText = 'Nessun ISBN fornito';
             }
         });
+        document.getElementById('compra').addEventListener('click', function () {
+            window.location.href = "carrello.html";
+        })
     </script>
 </body>
 </html>

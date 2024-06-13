@@ -50,3 +50,8 @@ h2 {
         background-color: #575757;
         color: white;
     }
+
+    img{
+        height: 120px;
+        width:90px;
+    }
