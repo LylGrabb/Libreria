@@ -56,24 +56,24 @@ table, td, td {
 }
 
 /* responsive */
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
     .responsive-text {
-        font-size: 16px; /* Esempio: dimensione del testo per schermi più piccoli */
-    }
+        font-size: 16px;*/ /* Esempio: dimensione del testo per schermi più piccoli */
+    /*}
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
     .responsive-text {
-        font-size: 18px; /* Esempio: dimensione del testo per schermi medi */
-    }
+        font-size: 18px;*/ /* Esempio: dimensione del testo per schermi medi */
+    /*}
 }
 
 @media (min-width: 1025px) {
     .responsive-text {
-        font-size: 20px; /* Esempio: dimensione del testo per schermi più grandi */
-    }
+        font-size: 20px;*/ /* Esempio: dimensione del testo per schermi più grandi */
+    /*}
 }
 .responsive-text {
-    font-size: 1.2rem; /* Esempio: 1.2 volte la dimensione di base del carattere */
-    line-height: 1.5; /* Imposta l'interlinea in modo appropriato */
-}
+    font-size: 1.2rem;*/ /* Esempio: 1.2 volte la dimensione di base del carattere */
+    /*line-height: 1.5;*/ /* Imposta l'interlinea in modo appropriato */
+/*}*/
