@@ -39,7 +39,7 @@
                                 <a class="nav-link" href="/pages/elimina.html">Rimuovi</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/pages/carrello.html">Carrello</a>
+                                <a class="nav-link" href="/pages/preferiti.html">Preferiti</a>
                             </li>
                         </ul>
                     </div>
@@ -51,7 +51,7 @@
                 <!-- Dettagli del libro verranno inseriti qui -->
             </div>
             <div id="bottoneCompra">
-                <button id="compra">Compra</button>
+                <button id="preferiti">Preferiti ☆</button>
             </div>
         </div>
     </div>
@@ -62,14 +62,6 @@
         const isbn = JSON.parse(localStorage.getItem('selectedBook'));
 
         document.addEventListener('DOMContentLoaded', function () {
-            /*function getQueryParameter(name) {
-                const urlParams = new URLSearchParams(window.location.search);
-                return urlParams.get(name);
-            }
-
-            const isbn = getQueryParameter('isbn'); */
-
-
             let id = "info";
             let div = document.createElement('div');
             div.id = id;
@@ -87,13 +79,12 @@
                         p1.innerHTML = `<strong>Author:</strong> ${data.autore}`;
                         p6.innerHTML = `<strong> Genere:</strong> ${data.genere}`;
                         p3.innerHTML = `<strong>Description:</strong> ${data.descrizione}`;
-                        p4.innerHTML = `<strong>Numero di Pagine:</strong> ${data.pagine}     <strong>ISBN:</strong> ${data.isbn}       <strong>Prezzo:</strong> ${data.prezzo}€`;
-
+                        p4.innerHTML = `<strong>Numero di Pagine:</strong> ${data.pagine} <strong>ISBN:</strong> ${data.isbn} <strong>Prezzo:</strong> ${data.prezzo}€`;
 
                         const bookInfo = `
-                                                <h2>${data.titolo}</h2>
-                                                <img id="immagine" src="${data.url}" alt="${data.titolo}" >
-                                            `;
+                            <h2>${data.titolo}</h2>
+                            <img id="immagine" src="${data.url}" alt="${data.titolo}">
+                        `;
                         details.innerHTML = bookInfo;
                         div.appendChild(p1);
                         div.appendChild(p3);
@@ -106,9 +97,16 @@
                 document.getElementById('book-details').innerText = 'Nessun ISBN fornito';
             }
         });
-        document.getElementById('compra').addEventListener('click', function () {
+
+        document.getElementById('preferiti').addEventListener('click', function () {
+            let carrello = JSON.parse(localStorage.getItem('carrello')) || [];
+            if (!carrello.includes(isbn)) {
+                carrello.push(isbn);
+            }
+            localStorage.setItem('carrello', JSON.stringify(carrello));
             window.location.href = "carrello.html";
-        })
+        });
     </script>
+
 </body>
 </html>
