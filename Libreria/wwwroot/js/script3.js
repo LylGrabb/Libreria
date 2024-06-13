@@ -45,5 +45,4 @@
             console.error('Error sending data:', error);
         });
 
-    
 });
