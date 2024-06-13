@@ -33,16 +33,17 @@
         })
         .then(data => {
             console.log('Data sent successfully:', data);
+            var gif = document.getElementById('success-gif');
+            gif.classList.remove('hidden');
+
+            // Nascondi la GIF dopo 3 secondi
+            setTimeout(function () {
+                gif.classList.add('hidden');
+            }, 3000);
         })
         .catch(error => {
             console.error('Error sending data:', error);
         });
 
-    var gif = document.getElementById('success-gif');
-    gif.classList.remove('hidden');
-
-    // Nascondi la GIF dopo 3 secondi
-    setTimeout(function () {
-        gif.classList.add('hidden');
-    }, 3000);
+    
 });
