@@ -50,12 +50,18 @@ function elementi(tab, book) {
     const col3 = document.createElement('td');
     const col4 = document.createElement('td');
     const col5 = document.createElement('td');
+    const col6 = document.createElement('td');
+    const imm = document.createElement('img');
 
+    imm.src = book.url;
+    imm.id = "immagine"
+    col6.appendChild(imm);
     col1.textContent = book.titolo;
     col2.textContent = book.genere;
     col3.textContent = book.autore;
     col4.textContent = book.isbn;
     col5.textContent = book.prezzo + " €";
+    riga.appendChild(col6);
     riga.appendChild(col1);
     riga.appendChild(col2);
     riga.appendChild(col3);
