@@ -51,7 +51,24 @@ h2 {
         color: white;
     }
 
-    img{
-        height: 120px;
-        width:90px;
+    #img{
+        height: 140px;
+        width:100px;
     }
+    table{
+        border : 10px;
+        color: aliceblue;
+    }
+button {
+    background-color: #575757;
+    color: white;
+    padding: 7px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+table, td,tr{
+    border: 1px solid #575757;
+}

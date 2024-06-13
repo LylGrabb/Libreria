@@ -14,7 +14,6 @@
     <_ContentIncludedByDefault Remove="wwwroot\css\style2.css" />
     <_ContentIncludedByDefault Remove="wwwroot\css\style5.css" />
     <_ContentIncludedByDefault Remove="wwwroot\js\script2.js" />
-    <_ContentIncludedByDefault Remove="wwwroot\pages\carrello.html" />
   </ItemGroup>
 
   <ItemGroup>
