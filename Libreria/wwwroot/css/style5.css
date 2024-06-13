@@ -184,3 +184,16 @@ body {
     #titolo:hover, #isbnInvio:hover {
         background-color: rgba(51, 51, 51, 0.9);
     }
+
+#success-gif2.hidden, #error-gif2.hidden {
+    display: none;
+}
+
+#success-gif2, #error-gif2 {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
