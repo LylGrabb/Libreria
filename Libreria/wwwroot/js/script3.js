@@ -5,7 +5,7 @@
     const a = document.getElementById('autore').value;
     const pa = parseInt(document.getElementById('pagine').value);
     const pr = parseFloat(document.getElementById('prezzo').value);
-const d = document.getElementById('descrizione').value;
+    const d = document.getElementById('descrizione').value;
     const u = document.getElementById('url').value;
 
     fetch(`/api/LibroAPI/post`, {
@@ -37,4 +37,12 @@ const d = document.getElementById('descrizione').value;
         .catch(error => {
             console.error('Error sending data:', error);
         });
+
+    var gif = document.getElementById('success-gif');
+    gif.classList.remove('hidden');
+
+    // Nascondi la GIF dopo 3 secondi
+    setTimeout(function () {
+        gif.classList.add('hidden');
+    }, 3000);
 });
