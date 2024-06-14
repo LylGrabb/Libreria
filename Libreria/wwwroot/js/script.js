@@ -92,6 +92,7 @@ function elementi(tab, book) {
         }
         localStorage.setItem('carrello', JSON.stringify(carrello));
     });
+
     link.addEventListener('click', function (e) {
         e.preventDefault();
         localStorage.setItem('selectedBook', JSON.stringify(book.isbn));
