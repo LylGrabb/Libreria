@@ -74,7 +74,7 @@ table, td, td {
     }
 
 /* input e bottone */
-.search-button {
+.search-button,button {
     background-color: #575757;
     color: white;
     padding: 7px 20px;

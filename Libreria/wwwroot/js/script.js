@@ -91,7 +91,6 @@ function elementi(tab, book) {
             carrello.push(book.isbn);
         }
         localStorage.setItem('carrello', JSON.stringify(carrello));
-        window.location.href = "preferiti.html";
     });
     link.addEventListener('click', function (e) {
         e.preventDefault();
