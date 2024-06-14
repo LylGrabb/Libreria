@@ -33,7 +33,9 @@
         })
         .then(data => {
             console.log('Data sent successfully:', data);
-            var gif = document.getElementById('successGif');
+            var inputs = document.querySelectorAll('input');
+            inputs.forEach(input => input.value = '');
+            var gif = document.getElementById('success-gif');
             gif.classList.remove('hidden');
 
             // Nascondi la GIF dopo 3 secondi
@@ -43,9 +45,17 @@
         })
         .catch(error => {
             console.error('Error sending data:', error);
+            var inputs = document.querySelectorAll('input');
+            inputs.forEach(input => input.value = '');
+            var gif = document.getElementById('error-gif');
+            gif.classList.remove('hidden');
+
+            // Nascondi la GIF dopo 3 secondi
+            setTimeout(function () {
+                gif.classList.add('hidden');
+            }, 3000);
         });
 
-    
 });
 
 

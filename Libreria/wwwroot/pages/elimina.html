@@ -62,6 +62,8 @@
                 </label>
                 <button id="isbnInvio">Invio</button>
             </div>
+            <img id="success-gif2" src="../images/conferma.gif" alt="Success" class="hidden" />
+            <img id="error-gif2" src="../images/errore.gif" alt="error" class="hidden" />
         </div>
     </div>
     <script>
@@ -78,8 +80,28 @@
                 })
                 .then(data => {
                     console.log('Data removed successfully:', data);
+                    var inputs = document.querySelectorAll('input');
+                    inputs.forEach(input => input.value = '');
+                    var gif = document.getElementById('success-gif2');
+                    gif.classList.remove('hidden');
+
+                    // Nascondi la GIF dopo 3 secondi
+                    setTimeout(function () {
+                        gif.classList.add('hidden');
+                    }, 3000);
                 })
-                .catch(error => { console.error('Error sending data:', error); });
+                .catch(error => {
+                    console.error('Error sending data:', error);
+                    var inputs = document.querySelectorAll('input');
+                    inputs.forEach(input => input.value = '');
+                    var gif = document.getElementById('error-gif2');
+                    gif.classList.remove('hidden');
+
+                    // Nascondi la GIF dopo 3 secondi
+                    setTimeout(function () {
+                        gif.classList.add('hidden');
+                    }, 3000);
+                });
         });
 
         document.getElementById('titolo').addEventListener('click', function () {
@@ -95,8 +117,28 @@
                 })
                 .then(data => {
                     console.log('Data removed successfully:', data);
+                    var inputs = document.querySelectorAll('input');
+                    inputs.forEach(input => input.value = '');
+                    var gif = document.getElementById('success-gif2');
+                    gif.classList.remove('hidden');
+
+                    // Nascondi la GIF dopo 3 secondi
+                    setTimeout(function () {
+                        gif.classList.add('hidden');
+                    }, 3000);
                 })
-                .catch(error => { console.error('Error sending data:', error); });
+                .catch(error => {
+                    console.error('Error sending data:', error);
+                    var inputs = document.querySelectorAll('input');
+                    inputs.forEach(input => input.value = '');
+                    var gif = document.getElementById('error-gif2');
+                    gif.classList.remove('hidden');
+
+                    // Nascondi la GIF dopo 3 secondi
+                    setTimeout(function () {
+                        gif.classList.add('hidden');
+                    }, 3000);
+                });
         });
     </script>
 </body>
