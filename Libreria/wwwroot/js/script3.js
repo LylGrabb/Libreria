@@ -41,7 +41,7 @@
             // Nascondi la GIF dopo 3 secondi
             setTimeout(function () {
                 gif.classList.add('hidden');
-            }, 10000);
+            }, 5000);
         })
         .catch(error => {
             console.error('Error sending data:', error);
@@ -53,7 +53,7 @@
             // Nascondi la GIF dopo 3 secondi
             setTimeout(function () {
                 gif.classList.add('hidden');
-            }, 3000);
+            }, 5000);
         });
 
 });

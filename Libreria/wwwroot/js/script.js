@@ -51,11 +51,17 @@ function elementi(tab, book) {
     const col4 = document.createElement('td');
     const col5 = document.createElement('td');
     const col6 = document.createElement('td');
-    const imm = document.createElement('img');
+    const link = document.createElement('a');
+    link.href = `novita.html?isbn=${book.isbn}`;
 
+    const imm = document.createElement('img');
     imm.src = book.url;
-    imm.id = "immagine"
-    col6.appendChild(imm);
+    imm.alt = book.url;
+    imm.title = book.titolo;
+    imm.id = 'immagine';
+    link.appendChild(imm);
+
+    col6.appendChild(link);
     col1.textContent = book.titolo;
     col2.textContent = book.genere;
     col3.textContent = book.autore;
