@@ -10,6 +10,8 @@
                 m.src = `${b.url}`;
                 m.id = "g";
                 m.alt = `${b.url}`;
+                m.title = `${b.titolo}`;
+
                 l.appendChild(m);
                 t.appendChild(l);
 
