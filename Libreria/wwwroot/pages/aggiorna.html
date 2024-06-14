@@ -145,6 +145,8 @@
                 })
                 .catch(error => {
                     console.error('Error sending data:', error);
+                    var e = document.getElementById('error-gif');
+                    e.classList.remove('hidden');
                 });
         });
     </script>

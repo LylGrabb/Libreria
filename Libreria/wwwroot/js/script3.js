@@ -35,7 +35,7 @@
             console.log('Data sent successfully:', data);
             var inputs = document.querySelectorAll('input');
             inputs.forEach(input => input.value = '');
-            var gif = document.getElementById('success-gif');
+            var gif = document.getElementById('successGif');
             gif.classList.remove('hidden');
 
             // Nascondi la GIF dopo 3 secondi
