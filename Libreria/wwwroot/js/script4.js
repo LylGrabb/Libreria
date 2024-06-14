@@ -17,7 +17,8 @@
             fetch(`/api/LibroAPI/isbn/${isbn}`)
                 .then(response => response.json())
                 .then(data => {
-                    
+                    let p = document.getElementById('par');
+                    p.innerHTML = "";
                     let riga = document.createElement('tr');
                     let col1 = document.createElement('td');
                     let col2 = document.createElement('td');
