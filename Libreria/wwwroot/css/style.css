@@ -17,20 +17,25 @@
     height: 200px;
     width: 136px;
 }
-
+#stellaVuota, #stellaPiena {
+    height: 20px;
+    width: 20px;
+}
 .h1 {
     color: #AFCFCC;
     font-family: Georgia, serif;
 }
 
 table {
-    border-collapse: collapse;
+    border: 10px;
+    color: aliceblue;
+    border-color: white;
+    margin: auto;
     width: 100%;
-    color: white;
 }
 
 table, td, td {
-    border: 1px solid white;
+    border: 3px solid #808080;
 }
 
 #principale, ul {
@@ -74,7 +79,7 @@ table, td, td {
     }
 
 /* input e bottone */
-.search-button,button {
+.search-button {
     background-color: #575757;
     color: white;
     padding: 7px 20px;
@@ -107,4 +112,13 @@ table, td, td {
 
 #search-button:hover {
     background-color: rgba(51, 51, 51, 0.9);
+}
+button {
+    background-color: #575757;
+    color: white;
+    padding: 7px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
 }

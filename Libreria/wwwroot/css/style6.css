@@ -52,13 +52,17 @@ h2 {
     }
 
     #img{
-        height: 140px;
-        width:100px;
+        height: 160px;
+        width: 110px;
     }
-    table{
-        border : 10px;
-        color: aliceblue;
-    }
+table {
+    border: 10px;
+    color: aliceblue;
+    border-color: white;
+    margin: auto;
+    width: 900px;
+}
+
 button {
     background-color: #575757;
     color: white;
@@ -68,6 +72,19 @@ button {
     cursor: pointer;
     font-size: 16px;
     margin-left: 10px;
+}
+#clear {
+    background-color: #575757;
+    color: white;
+    padding: 7px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
 table, td,tr{
     border: 1px solid #575757;

@@ -1,7 +1,7 @@
 ﻿document.addEventListener('DOMContentLoaded', function () {
     let carrello = JSON.parse(localStorage.getItem('carrello')) || [];
     let carrelloBody = document.getElementById('carrello2');
-    
+
     function aggiornaCarrello(isbn) {
         carrello = carrello.filter(item => item !== isbn);
         localStorage.setItem('carrello', JSON.stringify(carrello));
@@ -10,6 +10,8 @@
     function svuotaCarrello() {
         carrello = [];
         localStorage.setItem('carrello', JSON.stringify(carrello));
+        carrelloBody.innerHTML = '<tr id="par"><td colspan="6"><p>Nessun Libro Presente</p></td></tr>';
+        noBooksMessage.style.display = 'block';
     }
 
     carrello.forEach(isbn => {
@@ -17,8 +19,6 @@
             fetch(`/api/LibroAPI/isbn/${isbn}`)
                 .then(response => response.json())
                 .then(data => {
-                    let p = document.getElementById('par');
-                    p.innerHTML = "";
                     let riga = document.createElement('tr');
                     let col1 = document.createElement('td');
                     let col2 = document.createElement('td');
@@ -52,16 +52,20 @@
                     riga.appendChild(col5);
                     riga.appendChild(col6);
 
-
                     carrelloBody.appendChild(riga);
                 })
                 .catch(error => console.error('Error fetching book details:', error));
         }
     });
-    document.getElementById('clear').addEventListener('click', () => {
-        let t = document.getElementById('carrello2');
 
-        t.innerHTML = 'Nessun Libro Presente';
+    const clearButton = document.getElementById('clear');
+    const carrelloTable = document.getElementById('carrello-table');
+    const noBooksMessage = document.getElementById('noBooksMessage');
+    
+
+    clearButton.addEventListener('click', function () {
+        carrelloTable.style.display = 'none';
+        noBooksMessage.style.display = 'block';
         svuotaCarrello();
-    })
+    });
 });

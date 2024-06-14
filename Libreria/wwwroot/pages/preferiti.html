@@ -5,14 +5,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link href="../css/style6.css" rel="stylesheet" />
-    <link rel="chrome-webstore-item icon" type="png" href="../images/carrello.png" />
+    <link rel="chrome-webstore-item icon" type="png" href="../images/preferiti.png" />
     <title>Preferiti</title>
     <script defer src="../js/script4.js"></script>
 </head>
 <body id="sesto">
     <div class="container">
         <div class="h1">
-            <h1 style="font-size:50px; padding-left: 20px">Carrello</h1>
+            <h1 style="font-size:50px; padding-left: 20px">Preferiti</h1>
         </div>
         <div id="navbar">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -47,7 +47,8 @@
         </div>
         <div class="container content text-center" style="background-color:#808080">
             <div id="carrello">
-                <table style="border: 4px; border-color: white;" >
+                <p id="noBooksMessage" style="display: none;">Nessun libro presente.</p>
+                <table id="carrello-table">
                     <thead id="carrello1">
                         <tr style="font-weight: bold;">
                             <td>Copertina</td>
@@ -59,12 +60,14 @@
                         </tr>
                     </thead>
                     <tbody id="carrello2">
-                        <tr  id="par"><td><p>Nessun Libro Presente</p></td></tr>
+                        <!-- Qui verranno aggiunte dinamicamente le righe dei libri -->
                     </tbody>
                 </table>
                 <button id="clear">Clear</button>
             </div>
         </div>
+
+
     </div>
 </body>
 </html>
