@@ -52,7 +52,14 @@ function elementi(tab, book) {
     const col5 = document.createElement('td');
     const col6 = document.createElement('td');
     const link = document.createElement('a');
+    const col7 = document.createElement('td');
+    const bott = document.createElement('button');
+
     link.href = `novita.html?isbn=${book.isbn}`;
+
+    bott.textContent = "Preferiti";
+    bott.id = "preferiti";
+
 
     const imm = document.createElement('img');
     imm.src = book.url;
@@ -61,12 +68,14 @@ function elementi(tab, book) {
     imm.id = 'immagine';
     link.appendChild(imm);
 
+    col7.appendChild(bott);
     col6.appendChild(link);
     col1.textContent = book.titolo;
     col2.textContent = book.genere;
     col3.textContent = book.autore;
     col4.textContent = book.isbn;
     col5.textContent = book.prezzo + " €";
+    riga.appendChild(col7);
     riga.appendChild(col6);
     riga.appendChild(col1);
     riga.appendChild(col2);
@@ -75,4 +84,18 @@ function elementi(tab, book) {
     riga.appendChild(col5);
 
     tab.appendChild(riga);
+
+    bott.addEventListener('click', function () {
+        let carrello = JSON.parse(localStorage.getItem('carrello')) || [];
+        if (!carrello.includes(book.isbn)) {
+            carrello.push(book.isbn);
+        }
+        localStorage.setItem('carrello', JSON.stringify(carrello));
+        window.location.href = "preferiti.html";
+    });
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        localStorage.setItem('selectedBook', JSON.stringify(book.isbn));
+        window.location.href = link.href;
+    });
 }
