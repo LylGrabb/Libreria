@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Libreria.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240612155100_LibroDatabase")]
+    [Migration("20240614073720_LibroDatabase")]
     partial class LibroDatabase
     {
         /// <inheritdoc />
