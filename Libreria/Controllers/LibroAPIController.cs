@@ -140,20 +140,31 @@ namespace Libreria.Controllers
 
 
 
-        [HttpPut("{titolo}")]
-        public IActionResult UpdateL(string titolo, [FromBody] LibroDTO libroDTO)
+        [HttpPut("put/{isbn}")]
+        public IActionResult UpdateL(string isbn, [FromBody] LibroDTO libroDTO)
         {
-            if (libroDTO == null || !titolo.Equals(libroDTO.Titolo, System.StringComparison.OrdinalIgnoreCase))
+            if (libroDTO == null || !isbn.Equals(libroDTO.Isbn, System.StringComparison.OrdinalIgnoreCase))
             {
                 return BadRequest("Dati non validi");
             }
 
-            var libroEsistente = _db.Libri.AsNoTracking().FirstOrDefault(r => r.Titolo == titolo);
+            var libroEsistente = _db.Libri.AsNoTracking().FirstOrDefault(r => r.Isbn == isbn);
             if (libroEsistente == null)
             {
                 return NotFound("Libro non trovato");
             }
 
+            var scaffale = _db.Scaffali.FirstOrDefault(s => s.GenereS.ToLower() == libroDTO.Genere.ToLower());
+            if (scaffale == null)
+            {
+                scaffale = new Scaffal()
+                {
+                    GenereS = libroDTO.Genere,
+                    Libris = new List<Libro>()
+                };
+                _db.Scaffali.Add(scaffale);
+                _db.SaveChanges();
+            }
             var libro = new Libro
             {
                 Autore = libroDTO.Autore,
@@ -164,7 +175,7 @@ namespace Libreria.Controllers
                 Url = libroDTO.Url,
                 Prezzo = libroDTO.Prezzo,
                 Descrizione = libroDTO.Descrizione,
-                ScaffaleId = libroDTO.ScaffaleId
+                ScaffaleId = scaffale.IdS
             };
 
             _db.Libri.Update(libro);
@@ -173,7 +184,8 @@ namespace Libreria.Controllers
             return NoContent();
         }
 
-        [HttpPatch("{titolo}", Name = "UpdatePartialLibro")]
+
+        /*[HttpPatch("{titolo}", Name = "UpdatePartialLibro")]
         public IActionResult UpdatePartialLibro(string titolo, [FromBody] JsonPatchDocument<LibroDTO> patchDTO)
         {
             if (patchDTO == null)
@@ -218,7 +230,7 @@ namespace Libreria.Controllers
             _db.SaveChanges();
 
             return NoContent();
-        }
+        }*/
 
         [HttpDelete("delete/isbn/{isbn}")]
         public IActionResult Rimuovi(string isbn)

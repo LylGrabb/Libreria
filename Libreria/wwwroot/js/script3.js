@@ -41,7 +41,7 @@
             // Nascondi la GIF dopo 3 secondi
             setTimeout(function () {
                 gif.classList.add('hidden');
-            }, 3000);
+            }, 10000);
         })
         .catch(error => {
             console.error('Error sending data:', error);
@@ -56,4 +56,9 @@
             }, 3000);
         });
 
+});
+
+
+document.getElementById('aggiorna').addEventListener('click', () => {
+    window.location.href = "aggiorna.html";
 });
