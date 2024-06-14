@@ -51,8 +51,8 @@
         </div>
         <div id="spazioInput" class="container content" style="background-color:#808080">
             <label for="inp" class="inp">
-                <input type="text" id="isbn1" placeholder="&nbsp;">
-                <span class="label">Isbn1</span>
+                <input type="text" id="isbn" placeholder="&nbsp;">
+                <span class="label">Isbn</span>
                 <span class="focus-bg"></span>
             </label>
             <label for="inp" class="inp">
@@ -60,11 +60,7 @@
                 <span class="label">Titolo</span>
                 <span class="focus-bg"></span>
             </label>
-            <label for="inp" class="inp">
-                <input type="text" id="isbn" placeholder="&nbsp;">
-                <span class="label">Isbn</span>
-                <span class="focus-bg"></span>
-            </label>
+            
             <label for="inp" class="inp">
                 <input type="text" id="genere" placeholder="&nbsp;">
                 <span class="label">Genere</span>
@@ -103,7 +99,7 @@
     </div>
     <script>
         document.getElementById('invio').addEventListener('click', function () {
-            const isbn = document.getElementById('isbn1').value;
+   
             const t = document.getElementById('titolo').value;
             const i = document.getElementById('isbn').value;
             const g = document.getElementById('genere').value;
@@ -113,7 +109,7 @@
             const d = document.getElementById('descrizione').value;
             const u = document.getElementById('url').value;
 
-            fetch(`/api/LibroAPI/put/${isbn}`, {
+            fetch(`/api/LibroAPI/put/${i}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -123,7 +119,7 @@
                     genere: g,
                     pagine: pa,
                     titolo: t,
-                    isbn: isbn,
+                    isbn: i,
                     url: u,
                     prezzo: pr,
                     descrizione: d,

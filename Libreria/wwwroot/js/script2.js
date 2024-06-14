@@ -4,7 +4,14 @@
         .then(response => response.json())
         .then(data => {
             data.forEach(b => {
-                let genereId = b.genere.toLowerCase().split(" ").pop();
+                let genereId;
+                const genereWords = b.genere.toLowerCase().split(" ");
+
+                if (genereWords[0] === "di") {
+                    genereId = genereWords.pop();
+                } else {
+                    genereId = b.genere.toLowerCase();
+                }
 
                 let div = document.getElementById(genereId);
                 if (div === null) {
@@ -14,7 +21,13 @@
 
                     // titoletto
                     let titolo = document.createElement('h2');
+
+                    genereWords1 = b.genere.toLowerCase().split(" ");
+                    if (genereWords1[0] === ("di")) {
+                        titolo.textContent = genereWords1.pop();
+                    }
                     titolo.textContent = b.genere;
+                   
 
                     // div secondario, contiene div immagine
                     let div2 = document.createElement('div');
