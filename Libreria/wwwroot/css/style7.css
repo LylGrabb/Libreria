@@ -1,5 +1,5 @@
 ﻿/* Body */
-#quarto {
+#ottavo {
     font-family: Arial, sans-serif;
     background-color: rgba(51, 51, 51, 0.9);
 }
@@ -157,133 +157,17 @@ body {
     font-size: 16px;
 }
 
-#action-container {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-}
-
-#success-gif.hidden {
+#success-gif.hidden, #error-gif.hidden {
     display: none;
 }
 
-#success-gif {
+#success-gif, #error-gif {
+    position: absolute;
+    bottom: 0;
+    right: 0;
     width: 50px;
     height: 50px;
-    margin-left: 10px;
 }
-
 #aggiorna-page {
     float: left;
-}
-#principale {
-    font-family: Arial, sans-serif;
-    background-image: image-set("/images/libreria.jpg");
-}
-
-#secondario {
-    font-family: Arial, sans-serif;
-    background-color: rgba(51, 51, 51, 0.9);
-}
-
-#g {
-    height: 310px;
-    width: 210px;
-    margin: 2.8px;
-}
-
-#immagine {
-    height: 200px;
-    width: 136px;
-}
-
-.h1 {
-    color: #AFCFCC;
-    font-family: Georgia, serif;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-    color: white;
-}
-
-table, td, td {
-    border: 1px solid white;
-}
-
-#principale, ul {
-    margin: 0;
-    padding: 0;
-}
-
-/* sfondo libri */
-.content {
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    margin: 20px;
-    position: relative;
-}
-
-/* navbar */
-.navbar {
-    background-color: rgba(51, 51, 51, 0.9);
-    border-radius: 10px;
-    margin: 20px;
-    overflow: hidden;
-    padding: 10px;
-    width: 100%;
-}
-
-.nav-link {
-    display: block;
-    color: white !important;
-    text-align: center;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 10px;
-    transition: background-color 0.3s, color 0.3s;
-    margin: 5px;
-}
-
-    .nav-link:hover {
-        background-color: #575757;
-        color: white;
-    }
-
-/* input e bottone */
-.search-button {
-    background-color: #575757;
-    color: white;
-    padding: 7px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.search-container {
-    margin-top: 20px;
-}
-
-.search-input {
-    padding: 10px;
-    border: 2px solid #575757;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-right: 10px;
-    width: 400px;
-}
-
-.search-button {
-    height: 40px;
-}
-
-.search-input {
-    height: 40px;
-}
-
-#search-button:hover {
-    background-color: rgba(51, 51, 51, 0.9);
 }
